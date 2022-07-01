@@ -37,9 +37,15 @@
 
 #define MAILENGINE_H
 
-#include <libetpan/mailmessage.h>
-#include <libetpan/mailfolder.h>
-#include <libetpan/mailprivacy_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmessage.h"
+# include "mailfolder.h"
+# include "mailprivacy_types.h"
+#else
+# include <libetpan/mailmessage.h>
+# include <libetpan/mailfolder.h>
+# include <libetpan/mailprivacy_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

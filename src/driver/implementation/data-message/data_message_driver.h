@@ -37,7 +37,11 @@
 
 #define DATA_MESSAGE_DRIVER_H
 
-#include <libetpan/mailmessage.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmessage.h"
+#else
+# include <libetpan/mailmessage.h>
+#endif
 
 #define LIBETPAN_DATA_MESSAGE
 

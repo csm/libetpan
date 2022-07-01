@@ -33,7 +33,11 @@
 #ifndef NEWSFEED_ITEM_H
 #define NEWSFEED_ITEM_H
 
-#include <libetpan/newsfeed_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "newsfeed_types.h"
+#else
+# include <libetpan/newsfeed_types.h>
+#endif
 
 struct newsfeed_item * newsfeed_item_new(struct newsfeed * feed);
 void newsfeed_item_free(struct newsfeed_item * item);

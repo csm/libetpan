@@ -41,7 +41,11 @@
 extern "C" {
 #endif
 
-#include <libetpan/mailmbox_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmbox_types.h"
+#else
+# include <libetpan/mailmbox_types.h>
+#endif
 
 int
 mailmbox_append_message_list(struct mailmbox_folder * folder,

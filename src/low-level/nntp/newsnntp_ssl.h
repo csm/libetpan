@@ -42,11 +42,18 @@ extern "C" {
 #endif
 
 #include <sys/types.h>
+#ifdef HAVE_STDINT_H
+# include <stdint.h>
+#endif
 #ifdef HAVE_INTTYPES_H
 #	include <inttypes.h>
 #endif
 
-#include <libetpan/newsnntp_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "newsnntp_types.h"
+#else
+# include <libetpan/newsnntp_types.h>
+#endif
 
 LIBETPAN_EXPORT
 int newsnntp_ssl_connect(newsnntp * f, const char * server, uint16_t port);

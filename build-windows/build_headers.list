@@ -5,12 +5,6 @@ src\data-types\clist.h
 src\data-types\maillock.h
 src\data-types\mailsem.h
 src\data-types\mailstream.h
-src\data-types\mailstream_cfstream.h
-src\data-types\mailstream_helper.h
-src\data-types\mailstream_low.h
-src\data-types\mailstream_socket.h
-src\data-types\mailstream_ssl.h
-src\data-types\mailstream_types.h
 src\data-types\mmapstring.h
 src\driver\implementation\data-message\data_message_driver.h
 src\driver\implementation\db\dbdriver.h
@@ -60,9 +54,7 @@ src\driver\implementation\pop3\pop3driver_message.h
 src\driver\implementation\pop3\pop3driver_types.h
 src\driver\implementation\pop3\pop3storage.h
 src\driver\interface\maildriver.h
-src\driver\interface\maildriver_errors.h
 src\driver\interface\maildriver_types.h
-src\driver\interface\maildriver_types_helper.h
 src\driver\interface\mailfolder.h
 src\driver\interface\mailmessage.h
 src\driver\interface\mailmessage_types.h

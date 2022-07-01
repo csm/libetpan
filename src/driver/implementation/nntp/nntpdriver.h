@@ -37,7 +37,11 @@
 
 #define NNTPDRIVER_H
 
-#include <libetpan/nntpdriver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "nntpdriver_types.h"
+#else
+# include <libetpan/nntpdriver_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

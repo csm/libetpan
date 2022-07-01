@@ -158,7 +158,7 @@ AC_SUBST(INSTALL)
 AC_HEADER_STDC
 AC_CHECK_HEADERS(fcntl.h unistd.h ctype.h sys/types.h sys/stat.h sys/mman.h limits.h)
 AC_CHECK_HEADERS(netdb.h netinet/in.h sys/socket.h)
-AC_CHECK_HEADERS(sys/param.h sys/select.h inttypes.h)
+AC_CHECK_HEADERS(sys/param.h sys/select.h stdint.h inttypes.h)
 AC_CHECK_HEADERS(arpa/inet.h winsock2.h)
 
 

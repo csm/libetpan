@@ -37,7 +37,11 @@
 
 #define MAILSTREAM_SSL_H
 
-#include <libetpan/mailstream.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailstream.h"
+#else
+# include <libetpan/mailstream.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

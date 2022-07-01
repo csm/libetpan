@@ -38,7 +38,12 @@ extern "C" {
 #endif
   
 #ifndef WIN32
-#include <inttypes.h>
+# ifdef HAVE_STDINT_H
+#  include <stdint.h>
+# endif
+# ifdef HAVE_INTTYPES_H
+#  include <inttypes.h>
+# endif
 #endif
   
 #include "mailimap_types.h"

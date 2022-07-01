@@ -37,8 +37,13 @@
 
 #define MAILSTREAM_HELPER_H
 
-#include <libetpan/mmapstring.h>
-#include <libetpan/mailstream.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mmapstring.h"
+# include "mailstream.h"
+#else
+# include <libetpan/mmapstring.h>
+# include <libetpan/mailstream.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

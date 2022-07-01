@@ -36,9 +36,15 @@
 extern "C" {
 #endif
 
-#include <libetpan/libetpan-config.h>
-#include <libetpan/mailimap_types.h>
-#include <libetpan/uidplus_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+# include "mailimap_types.h"
+# include "uidplus_types.h"
+#else
+# include <libetpan/libetpan-config.h>
+# include <libetpan/mailimap_types.h>
+# include <libetpan/uidplus_types.h>
+#endif
 
 LIBETPAN_EXPORT
 extern struct mailimap_extension_api mailimap_extension_uidplus;

@@ -41,8 +41,13 @@
 extern "C" {
 #endif
 
-#include <libetpan/libetpan-config.h>
-#include <libetpan/mailsmtp_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+# include "mailsmtp_types.h"
+#else
+# include <libetpan/libetpan-config.h>
+# include <libetpan/mailsmtp_types.h>
+#endif
 
 LIBETPAN_EXPORT
 int mailsmtp_socket_connect(mailsmtp * session,

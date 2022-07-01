@@ -33,7 +33,11 @@
  * $Id: mailmessage.h,v 1.17 2008/02/20 22:15:51 hoa Exp $
  */
 
-#include <libetpan/mailmessage_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmessage_types.h"
+#else
+# include <libetpan/mailmessage_types.h>
+#endif
 
 #ifndef MAILMESSAGE_H
 

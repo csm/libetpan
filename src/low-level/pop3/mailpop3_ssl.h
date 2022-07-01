@@ -41,11 +41,18 @@
 extern "C" {
 #endif
 
+#ifdef HAVE_STDINT_H
+# include <stdint.h>
+#endif
 #ifdef HAVE_INTTYPES_H
 #	include <inttypes.h>
 #endif
 
-#include <libetpan/mailpop3_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailpop3_types.h"
+#else
+# include <libetpan/mailpop3_types.h>
+#endif
 
 LIBETPAN_EXPORT
 int mailpop3_ssl_connect(mailpop3 * f, const char * server, uint16_t port);

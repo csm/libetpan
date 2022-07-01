@@ -113,7 +113,13 @@ cd "$srcdir/$ARCHIVE"
 export LANG=en_US.US-ASCII
 
 LIB_NAME=$ARCHIVE
-TARGETS="iPhoneOS iPhoneSimulator"
+if [ "$PLATFORM_NAME" = "iphoseos" ]; then
+  TARGETS="iPhoneOS"
+elif [ "$PLATFORM_NAME" = "iphonesimulator" ]; then
+  TARGETS="iPhoneSimulator"
+else
+  TARGETS="iPhoneOS iPhoneSimulator"
+fi
 
 SDK_IOS_MIN_VERSION=7.0
 SDK_IOS_VERSION="`xcodebuild -showsdks 2>/dev/null | grep iphoneos | sed 's/.*iphoneos\(.*\)/\1/'`"

@@ -7,10 +7,12 @@ logfile="`pwd`/update.log"
 
 cd ..
 
+env
+
 if test "x$1" = xprepare ; then
   echo preparing
   ./autogen.sh > "$logfile" 2>&1
-  tar czf build-mac/autogen-result.tar.gz `find . -name '*.in'` configure install-sh config.sub missing config.guess
+  tar czf build-mac/autogen-result.tar.gz `find . -name '*.in'` configure install-sh config.sub config.guess
   exit 0
 elif test "x$1" = xprepare-clean ; then
   if test -f Makefile ; then

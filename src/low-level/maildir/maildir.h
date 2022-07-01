@@ -37,7 +37,11 @@
 
 #define MAILDIR_H
 
-#include <libetpan/maildir_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "maildir_types.h"
+#else
+# include <libetpan/maildir_types.h>
+#endif
 
 struct maildir * maildir_new(const char * path);
 

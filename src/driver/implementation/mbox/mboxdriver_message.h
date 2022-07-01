@@ -37,7 +37,11 @@
 
 #define MBOXDRIVER_MESSAGE_H
 
-#include <libetpan/mboxdriver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mboxdriver_types.h"
+#else
+# include <libetpan/mboxdriver_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

@@ -38,7 +38,12 @@
 #define MAILSTREAM_LOW_H
 
 #include <sys/types.h>
-#include <libetpan/mailstream_types.h>
+
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailstream_types.h"
+#else
+# include <libetpan/mailstream_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

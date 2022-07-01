@@ -37,7 +37,11 @@
 
 #define MAILSEM_H
 
-#include <libetpan/libetpan-config.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+#else
+# include <libetpan/libetpan-config.h>
+#endif
 
 struct mailsem {
   void * sem_sem;

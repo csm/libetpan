@@ -33,7 +33,11 @@
 
 #define NAMESPACE_TYPES_H
 
-#include <libetpan/clist.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "clist.h"
+#else
+# include <libetpan/clist.h>
+#endif
 
 enum {
   MAILIMAP_NAMESPACE_TYPE_NAMESPACE

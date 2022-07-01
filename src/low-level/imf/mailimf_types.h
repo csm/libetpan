@@ -42,8 +42,13 @@
 extern "C" {
 #endif
 
-#include <libetpan/libetpan-config.h>
-#include <libetpan/clist.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+# include "clist.h"
+#else
+# include <libetpan/libetpan-config.h>
+# include <libetpan/clist.h>
+#endif
 #include <sys/types.h>
 
 /*

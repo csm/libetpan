@@ -41,8 +41,13 @@
 extern "C" {
 #endif
 
-#include <libetpan/mailmime_types.h>
-#include <libetpan/mmapstring.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmime_types.h"
+# include "mmapstring.h"
+#else
+# include <libetpan/mailmime_types.h>
+# include <libetpan/mmapstring.h>
+#endif
 
 LIBETPAN_EXPORT
 int mailmime_fields_write_mem(MMAPString * f, int * col,

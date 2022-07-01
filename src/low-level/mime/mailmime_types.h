@@ -45,11 +45,19 @@ extern "C" {
 #	include <libetpan/libetpan-config.h>
 #endif
 
+#ifdef HAVE_STDINT_H
+# include <stdint.h>
+#endif
 #ifdef HAVE_INTTYPES_H
 #	include <inttypes.h>
 #endif
-#include <libetpan/mailimf.h>
-#include <libetpan/clist.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailimf.h"
+# include "clist.h"
+#else
+# include <libetpan/mailimf.h>
+# include <libetpan/clist.h>
+#endif
 
 enum {
   MAILMIME_COMPOSITE_TYPE_ERROR,

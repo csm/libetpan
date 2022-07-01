@@ -37,8 +37,13 @@
 
 #define MAIL_STORAGE_H
 
-#include <libetpan/maildriver_types.h>
-#include <libetpan/mailstorage_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "maildriver_types.h"
+# include "mailstorage_types.h"
+#else
+# include <libetpan/maildriver_types.h>
+# include <libetpan/mailstorage_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

@@ -22,7 +22,9 @@
 /* support for ARM platforms with a 2.95.3 arm-gcc suite */
 @include <sys/param.h>
 #endif
-#if HAVE_INTTYPES_H
+#if HAVE_STDINT_H
+@include <stdint.h>
+#elif HAVE_INTTYPES_H
 @include <inttypes.h>
 #endif
 

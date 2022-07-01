@@ -37,8 +37,13 @@
 
 #define DBDRIVER_H
 
-#include <libetpan/dbdriver_message.h>
-#include <libetpan/dbdriver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "dbdriver_message.h"
+# include "dbdriver_types.h"
+#else
+# include <libetpan/dbdriver_message.h>
+# include <libetpan/dbdriver_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

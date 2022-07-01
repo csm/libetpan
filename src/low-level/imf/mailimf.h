@@ -41,11 +41,19 @@
 extern "C" {
 #endif
 
-#include <libetpan/mailimf_types.h>
-#include <libetpan/mailimf_write_generic.h>
-#include <libetpan/mailimf_write_file.h>
-#include <libetpan/mailimf_write_mem.h>
-#include <libetpan/mailimf_types_helper.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailimf_types.h"
+# include "mailimf_write_generic.h"
+# include "mailimf_write_file.h"
+# include "mailimf_write_mem.h"
+# include "mailimf_types_helper.h"
+#else
+# include <libetpan/mailimf_types.h>
+# include <libetpan/mailimf_write_generic.h>
+# include <libetpan/mailimf_write_file.h>
+# include <libetpan/mailimf_write_mem.h>
+# include <libetpan/mailimf_types_helper.h>
+#endif
 
 #ifdef HAVE_INTTYPES_H
 #	include <inttypes.h>

@@ -37,11 +37,19 @@
 
 #define FEEDDRIVER_TYPES_H
 
-#include <libetpan/libetpan-config.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
 
-#include <libetpan/maildriver_types.h>
-#include <libetpan/mailstorage_types.h>
-#include <libetpan/newsfeed.h>
+# include "maildriver_types.h"
+# include "mailstorage_types.h"
+# include "newsfeed.h"
+#else
+# include <libetpan/libetpan-config.h>
+
+# include <libetpan/maildriver_types.h>
+# include <libetpan/mailstorage_types.h>
+# include <libetpan/newsfeed.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

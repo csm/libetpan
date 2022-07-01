@@ -37,7 +37,11 @@
 
 #define MHDRIVER_H
 
-#include <libetpan/maildriver.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "maildriver.h"
+#else
+# include <libetpan/maildriver.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

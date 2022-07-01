@@ -41,30 +41,57 @@
 extern "C" {
 #endif
 
-#include <libetpan/mailimap_types.h>
-#include <libetpan/mailimap_types_helper.h>
-#include <libetpan/mailimap_helper.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailimap_types.h"
+# include "mailimap_types_helper.h"
+# include "mailimap_helper.h"
 
-#include <libetpan/mailimap_socket.h>
-#include <libetpan/mailimap_ssl.h>
+# include "mailimap_socket.h"
+# include "mailimap_ssl.h"
 
-#include <libetpan/acl.h>
-#include <libetpan/annotatemore.h>
-#include <libetpan/uidplus.h>
-#include <libetpan/idle.h>
-#include <libetpan/quota.h>
-#include <libetpan/namespace.h>
-#include <libetpan/mailimap_id.h>
-#include <libetpan/enable.h>
-#include <libetpan/xlist.h>
-#include <libetpan/xgmlabels.h>
-#include <libetpan/xgmmsgid.h>
-#include <libetpan/xgmthrid.h>
-#include <libetpan/condstore.h>
-#include <libetpan/qresync.h>
-#include <libetpan/mailimap_sort.h>
-#include <libetpan/mailimap_compress.h>
-#include <libetpan/mailimap_oauth2.h>
+# include "acl.h"
+# include "annotatemore.h"
+# include "uidplus.h"
+# include "idle.h"
+# include "quota.h"
+# include "namespace.h"
+# include "mailimap_id.h"
+# include "enable.h"
+# include "xlist.h"
+# include "xgmlabels.h"
+# include "xgmmsgid.h"
+# include "xgmthrid.h"
+# include "condstore.h"
+# include "qresync.h"
+# include "mailimap_sort.h"
+# include "mailimap_compress.h"
+# include "mailimap_oauth2.h"
+#else
+# include <libetpan/mailimap_types.h>
+# include <libetpan/mailimap_types_helper.h>
+# include <libetpan/mailimap_helper.h>
+
+# include <libetpan/mailimap_socket.h>
+# include <libetpan/mailimap_ssl.h>
+
+# include <libetpan/acl.h>
+# include <libetpan/annotatemore.h>
+# include <libetpan/uidplus.h>
+# include <libetpan/idle.h>
+# include <libetpan/quota.h>
+# include <libetpan/namespace.h>
+# include <libetpan/mailimap_id.h>
+# include <libetpan/enable.h>
+# include <libetpan/xlist.h>
+# include <libetpan/xgmlabels.h>
+# include <libetpan/xgmmsgid.h>
+# include <libetpan/xgmthrid.h>
+# include <libetpan/condstore.h>
+# include <libetpan/qresync.h>
+# include <libetpan/mailimap_sort.h>
+# include <libetpan/mailimap_compress.h>
+# include <libetpan/mailimap_oauth2.h>
+#endif
 
 /*
   mailimap_connect()

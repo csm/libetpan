@@ -37,7 +37,11 @@
 
 #define IMAPDRIVER_CACHED_MESSAGE_H
 
-#include <libetpan/imapdriver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "imapdriver_types.h"
+#else
+# include <libetpan/imapdriver_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

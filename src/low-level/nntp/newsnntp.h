@@ -41,17 +41,28 @@
 extern "C" {
 #endif
 
+#ifdef HAVE_STDINT_H
+# include <stdint.h>
+#endif
 #ifdef HAVE_INTTYPES_H
 #	include <inttypes.h>
 #endif
 #include <sys/types.h>
 #include <time.h>
 
-#include <libetpan/clist.h>
-#include <libetpan/mailstream.h>
-#include <libetpan/newsnntp_socket.h>
-#include <libetpan/newsnntp_ssl.h>
-#include <libetpan/newsnntp_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "clist.h"
+# include "mailstream.h"
+# include "newsnntp_socket.h"
+# include "newsnntp_ssl.h"
+# include "newsnntp_types.h"
+#else
+# include <libetpan/clist.h>
+# include <libetpan/mailstream.h>
+# include <libetpan/newsnntp_socket.h>
+# include <libetpan/newsnntp_ssl.h>
+# include <libetpan/newsnntp_types.h>
+#endif
 
 /*
    newsnntp_new()

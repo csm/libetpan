@@ -37,10 +37,17 @@
 
 #define MAIL_PRIVACY_TYPES_H
 
-#include <libetpan/chash.h>
-#include <libetpan/carray.h>
-#include <libetpan/mailmessage.h>
-#include <libetpan/mailmime.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "chash.h"
+# include "carray.h"
+# include "mailmessage.h"
+# include "mailmime.h"
+#else
+# include <libetpan/chash.h>
+# include <libetpan/carray.h>
+# include <libetpan/mailmessage.h>
+# include <libetpan/mailmime.h>
+#endif
 
 struct mailprivacy {
   char * tmp_dir;               /* working tmp directory */

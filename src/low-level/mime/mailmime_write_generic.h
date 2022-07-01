@@ -41,7 +41,11 @@
 extern "C" {
 #endif
 
-#include <libetpan/mailmime_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmime_types.h"
+#else
+# include <libetpan/mailmime_types.h>
+#endif
 #include <stdio.h>
 
 int mailmime_fields_write_driver(int (* do_write)(void *, const char *, size_t), void * data, int * col,

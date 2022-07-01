@@ -41,7 +41,11 @@
 extern "C" {
 #endif
 
-#include <libetpan/nntpdriver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "nntpdriver_types.h"
+#else
+# include <libetpan/nntpdriver_types.h>
+#endif
 
 extern mailmessage_driver * nntp_message_driver;
 

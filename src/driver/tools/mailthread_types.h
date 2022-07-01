@@ -41,8 +41,13 @@
 extern "C" {
 #endif
 
-#include <libetpan/maildriver_types.h>
-#include <libetpan/mailmessage_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "maildriver_types.h"
+# include "mailmessage_types.h"
+#else
+# include <libetpan/maildriver_types.h>
+# include <libetpan/mailmessage_types.h>
+#endif
 
 /*
   This is the type of tree construction to apply.

@@ -41,7 +41,11 @@
 extern "C" {
 #endif
 
-#include <libetpan/mailmime_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmime_types.h"
+#else
+# include <libetpan/mailmime_types.h>
+#endif
 
 LIBETPAN_EXPORT
 char * mailmime_content_charset_get(struct mailmime_content * content);

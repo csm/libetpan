@@ -37,8 +37,13 @@
 extern "C" {
 #endif
 
-#include <libetpan/mailimap_types.h>
-#include <libetpan/mailimap_extension_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailimap_types.h"
+# include "mailimap_extension_types.h"
+#else
+# include <libetpan/mailimap_types.h>
+# include <libetpan/mailimap_extension_types.h>
+#endif
 
 /*
   you add a (static) mailimap_extension_api to the list of extensions

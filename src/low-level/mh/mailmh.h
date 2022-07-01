@@ -43,9 +43,15 @@ extern "C" {
 
 #include <sys/types.h>
 
-#include <libetpan/libetpan-config.h>
-#include <libetpan/carray.h>
-#include <libetpan/chash.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+# include "carray.h"
+# include "chash.h"
+#else
+# include <libetpan/libetpan-config.h>
+# include <libetpan/carray.h>
+# include <libetpan/chash.h>
+#endif
 
 enum {
   MAILMH_NO_ERROR = 0,

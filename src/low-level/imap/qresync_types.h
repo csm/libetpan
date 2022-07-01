@@ -33,7 +33,11 @@
 
 #define QRESYNC_TYPES_H
 
-#include <libetpan/libetpan-config.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+#else
+# include <libetpan/libetpan-config.h>
+#endif
 
 enum {
   MAILIMAP_QRESYNC_TYPE_VANISHED,

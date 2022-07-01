@@ -36,7 +36,11 @@
 
 #define USE_DEFLATE 1
 
-#include <libetpan/mailstream.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailstream.h"
+#else
+# include <libetpan/mailstream.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

@@ -33,7 +33,11 @@
  * $Id: nntpdriver_cached_message.h,v 1.6 2004/11/21 21:53:33 hoa Exp $
  */
 
-#include <libetpan/mailmessage_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmessage_types.h"
+#else
+# include <libetpan/mailmessage_types.h>
+#endif
 
 #ifndef NNTPDRIVER_CACHED_MESSAGE_H
 

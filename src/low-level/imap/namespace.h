@@ -37,9 +37,15 @@
 extern "C" {
 #endif
 
-#include <libetpan/libetpan-config.h>
-#include <libetpan/namespace_types.h>
-#include <libetpan/mailimap_extension.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+# include "namespace_types.h"
+# include "mailimap_extension.h"
+#else
+# include <libetpan/libetpan-config.h>
+# include <libetpan/namespace_types.h>
+# include <libetpan/mailimap_extension.h>
+#endif
 
 LIBETPAN_EXPORT
 extern struct mailimap_extension_api mailimap_extension_namespace;

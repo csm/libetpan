@@ -37,7 +37,11 @@
 
 #define MAIL_PRIVACY_GNUPG_H
 
-#include <libetpan/mailprivacy_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailprivacy_types.h"
+#else
+# include <libetpan/mailprivacy_types.h>
+#endif
 
 LIBETPAN_EXPORT
 int mailprivacy_gnupg_init(struct mailprivacy * privacy);

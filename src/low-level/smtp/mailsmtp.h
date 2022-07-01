@@ -41,12 +41,19 @@
 extern "C" {
 #endif
 
+#ifdef XCODE_FRAMEWORK_BUILD
+#include "mailsmtp_types.h"
+#include "mailsmtp_helper.h"
+#include "mailsmtp_socket.h"
+#include "mailsmtp_ssl.h"
+#include "mailsmtp_oauth2.h"
+#else
 #include <libetpan/mailsmtp_types.h>
 #include <libetpan/mailsmtp_helper.h>
 #include <libetpan/mailsmtp_socket.h>
 #include <libetpan/mailsmtp_ssl.h>
 #include <libetpan/mailsmtp_oauth2.h>
-
+#endif
 
 LIBETPAN_EXPORT
 mailsmtp * mailsmtp_new(size_t progr_rate,

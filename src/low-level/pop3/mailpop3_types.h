@@ -41,11 +41,19 @@
 extern "C" {
 #endif
 
+#ifdef XCODE_FRAMEWORK_BUILD
+#include "libetpan-config.h"
+#include "mailstream.h"
+#include "mmapstring.h"
+#include "carray.h"
+#include "clist.h"
+#else
 #include <libetpan/libetpan-config.h>
 #include <libetpan/mailstream.h>
 #include <libetpan/mmapstring.h>
 #include <libetpan/carray.h>
 #include <libetpan/clist.h>
+#endif
 
 enum {
   MAILPOP3_NO_ERROR = 0,

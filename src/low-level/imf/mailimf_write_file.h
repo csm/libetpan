@@ -42,7 +42,11 @@ extern "C" {
 #endif
 
 #include <stdio.h>
-#include <libetpan/mailimf_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailimf_types.h"
+#else
+# include <libetpan/mailimf_types.h>
+#endif
 
 #define MAILIMF_WRITE_COMPATIBILITY
 

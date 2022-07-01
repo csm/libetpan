@@ -41,7 +41,11 @@
 extern "C" {
 #endif
 
-#include <libetpan/feeddriver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "feeddriver_types.h"
+#else
+# include <libetpan/feeddriver_types.h>
+#endif
 
 extern mailmessage_driver * feed_message_driver;
 

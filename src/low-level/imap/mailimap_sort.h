@@ -36,10 +36,16 @@
 extern "C" {
 #endif
   
-#include <libetpan/libetpan-config.h>
-#include <libetpan/mailimap_extension.h>
-#include <libetpan/mailimap_sort_types.h>
-  
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+# include "mailimap_extension.h"
+# include "mailimap_sort_types.h"
+#else
+# include <libetpan/libetpan-config.h>
+# include <libetpan/mailimap_extension.h>
+# include <libetpan/mailimap_sort_types.h>
+#endif
+
   LIBETPAN_EXPORT
   extern struct mailimap_extension_api mailimap_extension_sort;
   

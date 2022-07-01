@@ -32,8 +32,13 @@
 
 #define MAILPRIVACY_TOOLS_PRIVATE_H
 
-#include <libetpan/mailmessage.h>
-#include <libetpan/mailprivacy_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmessage.h"
+# include "mailprivacy_types.h"
+#else
+# include <libetpan/mailmessage.h>
+# include <libetpan/mailprivacy_types.h>
+#endif
 
 enum {
   NO_ERROR_PASSPHRASE = 0,

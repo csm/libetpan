@@ -38,14 +38,21 @@
 #define MAILDIR_TYPES_H
 
 #include <sys/types.h>
-#include <libetpan/libetpan-config.h>
-#include <libetpan/chash.h>
-#include <libetpan/carray.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+# include "chash.h"
+# include "carray.h"
+#else
+# include <libetpan/libetpan-config.h>
+# include <libetpan/chash.h>
+# include <libetpan/carray.h>
+#endif
+#ifdef HAVE_STDINT_H
+# include <stdint.h>
+#endif
 #ifdef HAVE_INTTYPES_H
 #	include <inttypes.h>
 #endif
-
-#include <libetpan/libetpan-config.h>
 
 #define LIBETPAN_MAILDIR
 

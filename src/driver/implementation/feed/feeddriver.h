@@ -37,7 +37,11 @@
 
 #define FEEDDRIVER_H
 
-#include <libetpan/feeddriver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "feeddriver_types.h"
+#else
+# include <libetpan/feeddriver_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

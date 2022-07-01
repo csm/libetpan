@@ -37,8 +37,8 @@
 
 #define MAILDRIVER_H
 
-#include <libetpan/maildriver_types.h>
-#include <libetpan/maildriver_types_helper.h>
+#include "maildriver_types.h"
+#include "maildriver_types_helper.h"
 
 #ifdef __cplusplus
 extern "C" {

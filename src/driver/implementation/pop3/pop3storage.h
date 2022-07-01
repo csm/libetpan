@@ -41,9 +41,15 @@
 extern "C" {
 #endif
 
-#include <libetpan/pop3driver_types.h>
-#include <libetpan/pop3driver.h>
-#include <libetpan/pop3driver_cached.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "pop3driver_types.h"
+# include "pop3driver.h"
+# include "pop3driver_cached.h"
+#else
+# include <libetpan/pop3driver_types.h>
+# include <libetpan/pop3driver.h>
+# include <libetpan/pop3driver_cached.h>
+#endif
 
 /*
   pop3_mailstorage_init is the constructor for a POP3 storage

@@ -41,7 +41,11 @@
 extern "C" {
 #endif
 
-#include <libetpan/mailmime_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmime_types.h"
+#else
+# include <libetpan/mailmime_types.h>
+#endif
 
 int mailmime_disposition_parse(const char * message, size_t length,
 			       size_t * indx,

@@ -37,13 +37,21 @@
 
 #define POP3DRIVER_TYPES_H
 
+#ifdef XCODE_FRAMEWORK_BUILD
+#include "libetpan-config.h"
+#include "maildriver_types.h"
+#include "mailpop3.h"
+#include "maildriver_types.h"
+#include "chash.h"
+#include "mailstorage_types.h"
+#else
 #include <libetpan/libetpan-config.h>
-
 #include <libetpan/maildriver_types.h>
 #include <libetpan/mailpop3.h>
 #include <libetpan/maildriver_types.h>
 #include <libetpan/chash.h>
 #include <libetpan/mailstorage_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

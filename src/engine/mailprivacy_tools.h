@@ -37,8 +37,13 @@
 
 #define MAIL_PRIVACY_TOOLS_H
 
-#include <libetpan/mailmessage.h>
-#include <libetpan/mailprivacy_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmessage.h"
+# include "mailprivacy_types.h"
+#else
+# include <libetpan/mailmessage.h>
+# include <libetpan/mailprivacy_types.h>
+#endif
 
 LIBETPAN_EXPORT
 void mailprivacy_mime_clear(struct mailmime * mime);

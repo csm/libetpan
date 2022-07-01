@@ -32,8 +32,13 @@
 
 #define MAILIMAP_EXTENSION_TYPES_H
 
-#include <libetpan/mailstream.h>
-#include <libetpan/mailimap_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailstream.h"
+# include "mailimap_types.h"
+#else
+# include <libetpan/mailstream.h>
+# include <libetpan/mailimap_types.h>
+#endif
 
 struct mailimap_extension_data;
 

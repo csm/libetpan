@@ -41,7 +41,11 @@
 extern "C" {
 #endif
 
-#include <libetpan/libetpan-config.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+#else
+# include <libetpan/libetpan-config.h>
+#endif
 
 #include "mailsmtp_types.h"
 #include "clist.h"

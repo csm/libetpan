@@ -41,12 +41,21 @@
 #	include <sys/time.h>
 #endif
 
-#include <libetpan/mailstream_low.h>
-#include <libetpan/mailstream_helper.h>
-#include <libetpan/mailstream_socket.h>
-#include <libetpan/mailstream_ssl.h>
-#include <libetpan/mailstream_cfstream.h>
-#include <libetpan/mailstream_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailstream_low.h"
+# include "mailstream_helper.h"
+# include "mailstream_socket.h"
+# include "mailstream_ssl.h"
+# include "mailstream_cfstream.h"
+# include "mailstream_types.h"
+#else
+# include <libetpan/mailstream_low.h>
+# include <libetpan/mailstream_helper.h>
+# include <libetpan/mailstream_socket.h>
+# include <libetpan/mailstream_ssl.h>
+# include <libetpan/mailstream_cfstream.h>
+# include <libetpan/mailstream_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

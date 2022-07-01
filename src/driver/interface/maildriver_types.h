@@ -44,13 +44,13 @@
 #	include <sys/types.h>
 #endif
 
-#include <libetpan/mailstream.h>
-#include <libetpan/mailimf.h>
-#include <libetpan/mailmime.h>
-#include <libetpan/carray.h>
+#include "mailstream.h"
+#include "mailimf.h"
+#include "mailmime.h"
+#include "carray.h"
 
-#include <libetpan/mailthread_types.h>
-#include <libetpan/maildriver_errors.h>
+#include "mailthread_types.h"
+#include "maildriver_errors.h"
 
 #ifdef __cplusplus
 extern "C" {

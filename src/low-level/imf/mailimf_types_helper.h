@@ -41,7 +41,11 @@
 extern "C" {
 #endif
 
-#include <libetpan/mailimf_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailimf_types.h"
+#else
+# include <libetpan/mailimf_types.h>
+#endif
 
 /*
   IMPORTANT NOTE:

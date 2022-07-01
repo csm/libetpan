@@ -32,7 +32,11 @@
 
 #define MAILIMAP_OAUTH2_H
 
-#include <libetpan/mailimap_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailimap_types.h"
+#else
+# include <libetpan/mailimap_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

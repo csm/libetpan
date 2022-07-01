@@ -32,7 +32,11 @@
 
 #define MAILSMTP_OAUTH2_H
 
-#include <libetpan/mailsmtp_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailsmtp_types.h"
+#else
+# include <libetpan/mailsmtp_types.h>
+#endif
 
 LIBETPAN_EXPORT
 int mailsmtp_oauth2_authenticate(mailsmtp * session, const char * auth_user,

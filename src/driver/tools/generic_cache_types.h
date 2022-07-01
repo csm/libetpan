@@ -37,8 +37,13 @@
 
 #define GENERIC_CACHE_TYPE_H
 
-#include <libetpan/carray.h>
-#include <libetpan/chash.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "carray.h"
+# include "chash.h"
+#else
+# include <libetpan/carray.h>
+# include <libetpan/chash.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

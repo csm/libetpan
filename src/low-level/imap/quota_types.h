@@ -37,9 +37,15 @@
 extern "C" {
 #endif
 
-#include <libetpan/libetpan-config.h>
-#include <libetpan/mailstream.h>
-#include <libetpan/clist.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+# include "mailstream.h"
+# include "clist.h"
+#else
+# include <libetpan/libetpan-config.h>
+# include <libetpan/mailstream.h>
+# include <libetpan/clist.h>
+#endif
 
 struct mailimap_quota_quota_resource {
 	char * resource_name;

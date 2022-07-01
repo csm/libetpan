@@ -37,7 +37,11 @@
 
 #define MAILTHREAD_H
 
-#include <libetpan/mailthread_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailthread_types.h"
+#else
+# include <libetpan/mailthread_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

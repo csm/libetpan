@@ -42,9 +42,14 @@ extern "C" {
 #endif
 
 #include <stdio.h>
-#include <libetpan/mailimf_types.h>
-#include <libetpan/mmapstring.h>
-  
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailimf_types.h"
+# include "mmapstring.h"
+#else
+# include <libetpan/mailimf_types.h>
+# include <libetpan/mmapstring.h>
+#endif
+
 /*
   mailimf_string_write_mem appends a string to a given string
   

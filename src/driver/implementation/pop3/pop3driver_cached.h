@@ -41,7 +41,11 @@
 extern "C" {
 #endif
 
-#include <libetpan/pop3driver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "pop3driver_types.h"
+#else
+# include <libetpan/pop3driver_types.h>
+#endif
 
 extern mailsession_driver * pop3_cached_session_driver;
 

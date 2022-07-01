@@ -37,7 +37,11 @@
 
 #define MHDRIVER_CACHED_H
 
-#include <libetpan/mhdriver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mhdriver_types.h"
+#else
+# include <libetpan/mhdriver_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

@@ -37,12 +37,21 @@
 
 #define MAILDIRDRIVER_TYPES_H
 
-#include <libetpan/libetpan-config.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
 
-#include <libetpan/maildriver_types.h>
-#include <libetpan/maildir.h>
-#include <libetpan/generic_cache_types.h>
-#include <libetpan/mailstorage_types.h>
+# include "maildriver_types.h"
+# include "maildir.h"
+# include "generic_cache_types.h"
+# include "mailstorage_types.h"
+#else
+# include <libetpan/libetpan-config.h>
+
+# include <libetpan/maildriver_types.h>
+# include <libetpan/maildir.h>
+# include <libetpan/generic_cache_types.h>
+# include <libetpan/mailstorage_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

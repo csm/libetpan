@@ -37,9 +37,13 @@
 
 #define MBOXDRIVER_CACHED_H
 
-#include <libetpan/libetpan-config.h>
-
-#include <libetpan/mboxdriver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+# include "mboxdriver_types.h"
+#else
+# include <libetpan/libetpan-config.h>
+# include <libetpan/mboxdriver_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

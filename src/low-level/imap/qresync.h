@@ -33,10 +33,17 @@
 
 #define QRESYNC_H
 
-#include <libetpan/mailimap_extension_types.h>
-#include <libetpan/mailimap_types.h>
-#include <libetpan/clist.h>
-#include <libetpan/qresync_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailimap_extension_types.h"
+# include "mailimap_types.h"
+# include "clist.h"
+# include "qresync_types.h"
+#else
+# include <libetpan/mailimap_extension_types.h>
+# include <libetpan/mailimap_types.h>
+# include <libetpan/clist.h>
+# include <libetpan/qresync_types.h>
+#endif
 
 LIBETPAN_EXPORT
 extern struct mailimap_extension_api mailimap_extension_qresync;

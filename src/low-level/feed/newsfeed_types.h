@@ -32,7 +32,11 @@
 
 #define NEWSFEED_TYPES_H
 
-#include <libetpan/carray.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "carray.h"
+#else
+# include <libetpan/carray.h>
+#endif
 #include <sys/types.h>
 
 enum {

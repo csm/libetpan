@@ -41,7 +41,11 @@
 extern "C" {
 #endif
 
-#include <libetpan/imapdriver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "imapdriver_types.h"
+#else
+# include <libetpan/imapdriver_types.h>
+#endif
 
 /*
   imap_mailstorage_init is the constructor for a IMAP4rev1 storage

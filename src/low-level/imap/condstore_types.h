@@ -33,7 +33,11 @@
 
 #define CONDSTORE_TYPE_H
 
-#include <libetpan/mailimap_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailimap_types.h"
+#else
+# include <libetpan/mailimap_types.h>
+#endif
 
 enum {
   MAILIMAP_CONDSTORE_TYPE_FETCH_DATA,

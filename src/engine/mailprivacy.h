@@ -37,9 +37,15 @@
 
 #define MAILPRIVACY_H
 
-#include <libetpan/mailmessage.h>
-#include <libetpan/mailprivacy_types.h>
-#include <libetpan/mailprivacy_tools.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmessage.h"
+# include "mailprivacy_types.h"
+# include "mailprivacy_tools.h"
+#else
+# include <libetpan/mailmessage.h>
+# include <libetpan/mailprivacy_types.h>
+# include <libetpan/mailprivacy_tools.h>
+#endif
 
 LIBETPAN_EXPORT
 struct mailprivacy * mailprivacy_new(char * tmp_dir, int make_alternative);

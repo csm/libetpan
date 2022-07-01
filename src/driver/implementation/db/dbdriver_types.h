@@ -37,11 +37,27 @@
 
 #define DBDRIVER_TYPES_H
 
-#include <libetpan/libetpan-config.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+#else
+# include <libetpan/libetpan-config.h>
+#endif
 
-#include <libetpan/maildriver_types.h>
-#include <libetpan/generic_cache_types.h>
-#include <libetpan/mailstorage_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "maildriver_types.h"
+#else
+# include <libetpan/maildriver_types.h>
+#endif
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "generic_cache_types.h"
+#else
+# include <libetpan/generic_cache_types.h>
+#endif
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailstorage_types.h"
+#else
+# include <libetpan/mailstorage_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

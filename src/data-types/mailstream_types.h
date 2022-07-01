@@ -43,9 +43,18 @@ extern "C" {
 
 #define LIBETPAN_MAILSTREAM_DEBUG
 #ifndef LIBETPAN_CONFIG_H
+# ifdef XCODE_FRAMEWORK_BUILD
+#  include "libetpan-config.h"
+# else
 #  include <libetpan/libetpan-config.h>
+# endif
 #endif
-#include <libetpan/carray.h>
+
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "carray.h"
+#else
+# include <libetpan/carray.h>
+#endif
 
 struct _mailstream;
 

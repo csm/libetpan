@@ -37,7 +37,11 @@
 
 #define MAILDRIVER_TYPES_HELPER_H
 
-#include <libetpan/maildriver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "maildriver_types.h"
+#else
+# include <libetpan/maildriver_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

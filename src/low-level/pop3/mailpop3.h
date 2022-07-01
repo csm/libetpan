@@ -41,12 +41,21 @@
 extern "C" {
 #endif
 
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailpop3_types.h"
+
+# include "mailpop3_helper.h"
+
+# include "mailpop3_socket.h"
+# include "mailpop3_ssl.h"
+#else
 #include <libetpan/mailpop3_types.h>
 
 #include <libetpan/mailpop3_helper.h>
 
 #include <libetpan/mailpop3_socket.h>
 #include <libetpan/mailpop3_ssl.h>
+#endif
 
 #define POP3_STRING_SIZE 513
 

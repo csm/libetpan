@@ -41,6 +41,17 @@
 extern "C" {
 #endif
 
+#ifdef XCODE_FRAMEWORK_BUILD
+#include "mailimf.h"
+#include "mailmime_types.h"
+#include "mailmime_types_helper.h"
+#include "mailmime_content.h"
+#include "mailmime_decode.h"
+#include "mailmime_disposition.h"
+#include "mailmime_write_file.h"
+#include "mailmime_write_mem.h"
+#include "mailmime_write_generic.h"
+#else
 #include <libetpan/mailimf.h>
 #include <libetpan/mailmime_types.h>
 #include <libetpan/mailmime_types_helper.h>
@@ -50,6 +61,7 @@ extern "C" {
 #include <libetpan/mailmime_write_file.h>
 #include <libetpan/mailmime_write_mem.h>
 #include <libetpan/mailmime_write_generic.h>
+#endif
 
 LIBETPAN_EXPORT
 int mailmime_content_parse(const char * message, size_t length,

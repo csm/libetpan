@@ -35,9 +35,14 @@
 #ifdef __cplusplus
 extern "C" {
 #endif
-  
-#include <libetpan/libetpan-config.h>
-#include <libetpan/mailimap_extension.h>
+
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+# include "mailimap_extension.h"
+#else
+# include <libetpan/libetpan-config.h>
+# include <libetpan/mailimap_extension.h>
+#endif
   
   struct mailimap_msg_att_xgmlabels {
     clist * att_labels; /* != NULL */

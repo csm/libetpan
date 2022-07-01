@@ -33,9 +33,15 @@
 
 #define QUOTA_H
 
-#include <libetpan/libetpan-config.h>
-#include <libetpan/mailimap_extension.h>
-#include <libetpan/quota_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+# include "mailimap_extension.h"
+# include "quota_types.h"
+#else
+# include <libetpan/libetpan-config.h>
+# include <libetpan/mailimap_extension.h>
+# include <libetpan/quota_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

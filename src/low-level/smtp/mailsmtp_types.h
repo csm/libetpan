@@ -41,8 +41,13 @@
 extern "C" {
 #endif
 
-#include <libetpan/mailstream.h>
-#include <libetpan/mmapstring.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailstream.h"
+# include "mmapstring.h"
+#else
+# include <libetpan/mailstream.h>
+# include <libetpan/mmapstring.h>
+#endif
 
 enum {
   MAILSMTP_NO_ERROR = 0,

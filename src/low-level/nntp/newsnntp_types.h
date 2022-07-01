@@ -41,11 +41,19 @@
 extern "C" {
 #endif
 
-#include <libetpan/libetpan-config.h>
-#include <libetpan/clist.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "libetpan-config.h"
+# include "clist.h"
 
-#include <libetpan/mailstream.h>
-#include <libetpan/mmapstring.h>
+# include "mailstream.h"
+# include "mmapstring.h"
+#else
+# include <libetpan/libetpan-config.h>
+# include <libetpan/clist.h>
+
+# include <libetpan/mailstream.h>
+# include <libetpan/mmapstring.h>
+#endif
 
 enum {
   NEWSNNTP_NO_ERROR = 0,

@@ -37,8 +37,13 @@
 
 #define MAILDIRDRIVER_CACHED_H
 
-#include <libetpan/maildriver.h>
-#include <libetpan/maildirdriver_types.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "maildriver.h"
+# include "maildirdriver_types.h"
+#else
+# include <libetpan/maildriver.h>
+# include <libetpan/maildirdriver_types.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {

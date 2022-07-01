@@ -37,7 +37,11 @@
 
 #define MBOXDRIVER_CACHED_MESSAGE_H
 
-#include <libetpan/mailmessage.h>
+#ifdef XCODE_FRAMEWORK_BUILD
+# include "mailmessage.h"
+#else
+# include <libetpan/mailmessage.h>
+#endif
 
 #ifdef __cplusplus
 extern "C" {
